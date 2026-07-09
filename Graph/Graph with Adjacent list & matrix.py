@@ -24,3 +24,4 @@ for i in range(e):
     adjMatrix[y][x]=1
 for i in adjMatrix:
     print(i)
+

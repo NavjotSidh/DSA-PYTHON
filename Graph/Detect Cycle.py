@@ -13,7 +13,7 @@ adjList2=[
     [0],
     [0]
 ]
-n=6
+n=len(adjList)
 visited=[False]*n
 def detect(i,parent,adjList,visited):
     visited[i]=True

@@ -1,4 +1,3 @@
-
 def max_product(arr):
     mx=mn=arr[0]
     for i in arr[1:]:

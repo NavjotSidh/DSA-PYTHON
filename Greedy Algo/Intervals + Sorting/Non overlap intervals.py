@@ -3,9 +3,9 @@ def non_overlap(intervals):
     ans=0
     intervals.sort()
     prev_end=intervals[0][1]
-    for i in range(len(intervals)):
+    for i in range(1,len(intervals)):
         if prev_end<=intervals[i][0]:
-            prev_end=intervals[i][0]
+            prev_end=intervals[i][1]
             continue
         else:
             ans+=1

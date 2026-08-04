@@ -3,10 +3,9 @@ def online_stock_span(prices):
     n=len(prices)
     stack=[]
     ans=[1]*n
-    for i,price in enumerate(prices):
-        while stack and price>=stack[-1][1]:
-            idx=stack.pop()[0]
-            ans[idx]=i-idx
-        stack.append((i,price))
+    for i,p in enumerate(prices):
+        while stack and p>=stack[-1][1]:
+            ans[i]+=ans[stack.pop()[0]]
+        stack.append((i,p))
     return ans
 print(online_stock_span(price))

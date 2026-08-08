@@ -1,15 +1,17 @@
-arr = [0,1,2,2,3,0,4]
-val = 2
+people = [3,2,2,1]
+limit = 3
+
+people.sort()
 l=0
-r=len(arr)-1
+r=len(people)-1
+count=0
 while l<=r:
-    if arr[l]==val:
-        arr.pop(l)
-        r-=1
-    elif arr[r]==val:
-        arr.pop(r)
+    total=people[l]+people[r]
+    if total>limit:
+        count+=1
         r-=1
     else:
+        count+=1
         l+=1
         r-=1
-print(len(arr))
+print(count)

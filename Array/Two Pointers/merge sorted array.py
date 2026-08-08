@@ -8,7 +8,7 @@ def merge_sorted_array(a,b):
         else:
             result.append(b[j])
             j+=1
-        result.extend(a[i:])
-        result.extend(b[j:])
-        return result
+    result.extend(a[i:])
+    result.extend(b[j:])
+    return result
 print(merge_sorted_array([1, 3, 5], [2, 4, 6]))

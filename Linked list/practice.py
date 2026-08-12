@@ -18,33 +18,23 @@ f.next=g
 g.next=None
 head=a
 
-# #Traversal of Linked List
-# curr=head
-# while curr!=None:
-#     print(curr.val)
-#     curr=curr.next
 
-#Insert Node at End
+
+# Insert Node at End
 # newNode=node(8)
 # curr=head
 # while curr.next!=None:
 #     curr=curr.next
 # curr.next=newNode
-# curr1=head
-# while curr1!=None:
-#     print(curr1.val)
-#     curr1=curr1.next
+# print(curr.val)
+# print(curr.next.val)
 
 #Delete a Node
-# k=3
-# curr=head
-# for i in range(k-1):
-#     curr=curr.next
-# curr.next=curr.next.next
-# curr1=head
-# while curr1!=None:
-#     print(curr1.val)
-#     curr1=curr1.next
+k=3
+curr=head
+while curr.next.val !=k:
+    curr=curr.next
+curr.next=curr.next.next
 
 #Middle Node (Brute force)
 # curr=head
@@ -90,3 +80,8 @@ head=a
 # while curr1!=None:
 #     print(curr1.val)
 #     curr1=curr1.next
+
+curr=head
+while curr!=None:
+    print(curr.val)
+    curr=curr.next

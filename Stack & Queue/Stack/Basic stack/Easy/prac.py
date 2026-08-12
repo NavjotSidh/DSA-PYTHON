@@ -1,23 +1,22 @@
-# Valid Parentheses
-s = "{[]}"
+s=["4", "13", "5", "/", "+"]
 stack=[]
-pairs={
-    ')':'(',
-    ']':'[',
-    '}':'{'
-}
+
 for ch in s:
-    if ch in ("(","[","{"):
-        stack.append(ch)
-    else:
-        if not stack:
-            print(False)
-            break
-        if stack[-1] != pairs[ch]:
-            print(False)
-            break
-        stack.pop()
-if len(stack)==0:
-    print(True)
-else:
-    print(False)
+    if ch.isdigit():
+        stack.append(int(ch))
+    elif ch=='+':
+        a=stack.pop()
+        b=stack.pop()
+        stack.append(a+b)
+    elif ch=='-':
+        a=stack.pop()
+        b=stack.pop()
+        stack.append(b-a)
+    elif ch=='*':
+        a=stack.pop()
+        b=stack.pop()
+        stack.append(a*b)
+    elif ch=='/':
+        a=stack.pop()
+        b=stack.pop()
+        stack.append(int(b)/int(a))

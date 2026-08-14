@@ -39,58 +39,56 @@ root.right.left.right = TreeNode(4)
 
 ans=[]
 def preorder(root):
-    if root is None:
-        return
+    if root==None:
+        return 0
     ans.append(root.val)
     preorder(root.left)
     preorder(root.right)
-# preorder(root)
-# print(ans)
+    return ans
+# print(preorder(root))
 
 def postorder(root):
-    if root is None:
-        return
+    if root==None:
+        return 0
     postorder(root.left)
     postorder(root.right)
     ans.append(root.val)
-# postorder(root)
-# print(ans)
+    return ans
+# print(postorder(root))
 
 def inorder(root):
-    if root is None:
+    if root==None:
         return
     inorder(root.left)
     ans.append(root.val)
     inorder(root.right)
-# inorder(root)
-# print(ans)
+    return ans
+# print(inorder(root))
 
-def levelorder(root):
-    if root is None:
-        return
+def level_order(root):
     queue=Queue()
+    ans=[]
     queue.push(root)
     ans.append([root.val])
-    while queue.size() > 0:
-        l = queue.size()
+    while queue.size()>0:
+        l=queue.size()
         level=[]
         for i in range(l):
             front=queue.pop()
             if front.left!=None:
-                level.append(front.left.val)
                 queue.push(front.left)
+                level.append(front.left.val)
             if front.right!=None:
-                level.append(front.right.val)
                 queue.push(front.right)
-        if len(level)>0:
-            ans.append(level)
-# levelorder(root)
-# print(ans)
+                level.append(front.right.val)
+        ans.append(level)
+    return ans
+# print(level_order(root))
 
-def height(root):
-    if root is None:
+def height_depth(root):
+    if root==None:
         return 0
-    maxleft=height(root.left)
-    maxright=height(root.right)
-    return max(maxleft,maxright)+1
-
+    left_height=height_depth(root.left)
+    right_height=height_depth(root.right)
+    return max(left_height,right_height)+1
+print(height_depth(root))

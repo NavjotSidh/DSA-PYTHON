@@ -38,9 +38,10 @@ ans.append(0)
 st.push(0)
 while st.size()>0:
     top=st.pop()
+    if not visited[top]:
+        visited[top]=True
+        ans.append(top)
     for i in adjList[top]:
         if not visited[i]:
-            visited[i] = True
-            ans.append(i)
             st.push(i)
 print(ans)

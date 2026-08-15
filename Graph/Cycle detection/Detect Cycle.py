@@ -25,4 +25,4 @@ def detect(i,parent,adjList,visited):
         if detect(x,i, adjList, visited):
             return True
     return False
-print(detect(0,-1,adjList2,visited))
+print(detect(0,-1,adjList,visited))

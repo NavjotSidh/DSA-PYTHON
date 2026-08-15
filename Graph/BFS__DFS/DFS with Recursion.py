@@ -18,6 +18,5 @@ def dfs(i,adjList,visited):
     for x in adjList[i]:
         if not visited[x]:
             dfs(x,adjList,visited)
-
-dfs(0,adjList,visited)
-print(ans)
+    return ans
+print(dfs(0,adjList,visited))

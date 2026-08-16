@@ -1,11 +1,15 @@
 import heapq
-nums = [3,2,1,5,6,4]
-k=2
-n=len(nums)
-heap=[]
-for num in nums:
-    heapq.heappush(heap,num)
+nums = [1,1,1,2,2,3]
+k = 2
+freq={}
+for i in nums:
+    freq[i]=freq.get(i,0)+1
 
-    if len(heap)>k:
-        heapq.heappop(heap)
-print(heap[0])
+# print(freq)
+h=[]
+for num,count in freq.items():
+    heapq.heappush(h,(count,num))
+    if len(h)>k:
+        heapq.heappop(h)
+ans=[num for count,num in h]
+print(ans[0])

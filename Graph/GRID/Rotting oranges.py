@@ -37,13 +37,8 @@ minutes=0
 while q and fresh>0:
     for i in range(q.size()):
         cr,cc=q.pop()
-        directions = [
-            (1, 0),
-            (-1, 0),
-            (0, 1),
-            (0, -1)
-        ]
-        for dr,dc in directions:
+        directions =
+        for dr,dc in [(1, 0),(-1, 0),(0, 1),(0, -1) ]:
             nr=cr+dr
             nc=cc+dc
             if (0<=nr<rows and 0<=nc<cols and oranges[nr][nc]==1):

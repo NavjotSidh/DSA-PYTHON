@@ -2,6 +2,7 @@ intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]]
 newinterval = [4,8]
 def insert_interval(intervals,newinterval):
     ans=[]
+    intervals.sort(key=lambda x:x[0])
     for i in range(len(intervals)):
         if newinterval[1]<intervals[i][0]:
             ans.append(newinterval)

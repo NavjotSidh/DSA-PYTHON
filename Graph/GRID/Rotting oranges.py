@@ -37,7 +37,6 @@ minutes=0
 while q and fresh>0:
     for i in range(q.size()):
         cr,cc=q.pop()
-        directions =
         for dr,dc in [(1, 0),(-1, 0),(0, 1),(0, -1) ]:
             nr=cr+dr
             nc=cc+dc

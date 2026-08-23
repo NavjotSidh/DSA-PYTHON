@@ -1,24 +1,27 @@
-from collections import deque
-adjList=[
-    [1, 3, 5],
-    [0, 2, 5],
-    [1, 4],
-    [0, 4],
-    [0, 2, 3],
-    [1]
+grid = [
+    ["1","1","0","0","0"],
+    ["1","1","0","1","0"],
+    ["0","0","1","0","0"],
+    ["0","0","0","1","1"],
+    ["1","0","0","0","1"]
 ]
-visited=[False]*len(adjList)
-q=deque()
-q.append((1,-1))
-visited[1]=True
-ans=False
-while len(q)>0:
-    node,parent=q.popleft()
-    for i in adjList[node]:
-        if not visited[i]:
-            visited[i]=True
-            q.append((i,node))
-        elif i!=parent:
-            ans=True
-            break
+
+def solve(r,c):
+    grid[r][c]="0"
+    direction=[(0,1),(1,0),(-1,0),(0,-1)]
+    for dr,dc in direction:
+        nr=dr+r
+        nc=dc+c
+        if 0<=nr<rows and 0<=nc<cols and grid[nr][nc]=="1":
+            solve(nr,nc)
+    return
+
+rows=len(grid)
+cols=len(grid[0])
+ans=0
+for i in range(rows):
+    for j in range(cols):
+        if grid[i][j]=="1":
+            ans+=1
+            solve(i,j)
 print(ans)

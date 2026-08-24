@@ -12,6 +12,6 @@ def countTriplets(arr, r):
             ans+=left.get(a,0) * right.get(b,0)
         left[x]=left.get(x,0)+1
     return ans
-arr = [1,1,1,1,2,2,2,4,4,4]
+arr = [1, 2, 2, 4]
 r = 2
 print(countTriplets(arr,r))

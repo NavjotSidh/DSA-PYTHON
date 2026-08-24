@@ -13,4 +13,4 @@ def solve(a):
             r+= i*(i-1)
 
     return r
-print(solve([1,2,1,2,3,2,4,1]))
+print(solve([1, 2, 1, 2, 1]))

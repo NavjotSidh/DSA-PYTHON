@@ -1,3 +1,4 @@
+
 def sansaXOR(arr):
     n=len(arr)
     res=0

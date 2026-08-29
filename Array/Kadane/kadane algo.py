@@ -6,4 +6,5 @@ def kadane(arr):
         max_sum=max(max_sum,cur_sum)
     print('Max sum :',max_sum)
 kadane([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+
 kadane([-8, -3, -6, -2, -5, -4])

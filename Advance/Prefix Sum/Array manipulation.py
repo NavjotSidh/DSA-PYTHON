@@ -9,4 +9,5 @@ def arrayManipulation(n, queries):
     for i in arr:
         curr+=i
         best=max(best,curr)
+
     return best

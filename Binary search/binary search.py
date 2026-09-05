@@ -8,6 +8,6 @@ while l<=r:
         print(mid)
         break
     elif arr[mid]<target:
-        l=mid
+        l=mid+1
     else:
-        r=mid
+        r=mid-1

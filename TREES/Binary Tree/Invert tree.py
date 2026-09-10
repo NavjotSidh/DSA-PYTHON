@@ -35,6 +35,7 @@ def preorder(root):
     preorder(root.left)
     preorder(root.right)
     return ans
-# print(preorder(invert_tree(root)))
+# print(preorder(root))
+invert_tree(root)
 print(preorder(root))
 

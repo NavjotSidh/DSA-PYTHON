@@ -21,7 +21,6 @@ def LCA(root,p,q):
     if p<root.val<q:
         return root.val
     elif p<root.val and q<root.val:
-        
         return LCA(root.left,p,q)
     elif p>root.val and q>root.val:
         return LCA(root.right,p,q)

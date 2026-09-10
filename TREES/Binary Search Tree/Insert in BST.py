@@ -1,3 +1,4 @@
+from collections import deque
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -35,10 +36,27 @@ def insertbst(root,target):
             else:
                 curr.right=newNode
                 break
-def inorder(root):
-    if root==None:
-        return
-    inorder(root.left)
-    print(root.val,end=" ")
-    inorder(root.right)
-inorder(root)
+insertbst(root,4)
+ans=[]
+def levelorder(root):
+    queue=deque()
+
+    queue.append(root)
+    ans.append([root.val])
+
+    while len(queue)>0:
+        l=len(queue)
+        level = []
+        for i in range(l):
+            front=queue.popleft()
+            if front.left!=None:
+                queue.append(front.left)
+                level.append(front.left.val)
+            if front.right!=None:
+                queue.append(front.right)
+                level.append(front.right.val)
+        if len(level)>0:
+            ans.append(level)
+    return ans
+
+print(levelorder(root))

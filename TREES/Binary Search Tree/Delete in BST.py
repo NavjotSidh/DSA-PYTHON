@@ -36,7 +36,7 @@ def deletebst(root,target):
             while temp.left:
                 temp=temp.left
             root.val=temp.val
-            root.right=deletebst(root.right,temp.val)
+            deletebst(root.right,temp.val)
     return root
 deletebst(root,12)
 def inorder(root):

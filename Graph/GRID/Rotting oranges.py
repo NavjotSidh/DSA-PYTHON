@@ -48,4 +48,4 @@ while q and fresh>0:
 if fresh>0:
     print("Not possible")
 else:
-    print(minutes)
+    print(minutes,"Minutes")

@@ -8,7 +8,7 @@ visited=[-1]*len(adjList)
 def dfs(curr,color):
     visited[curr]=color
     for i in adjList[curr]:
-        if visited[i] != -1:
+        if visited[i] != -1:  # Already visited
            if visited[i]==color:
                return False
         else:

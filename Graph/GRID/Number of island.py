@@ -5,11 +5,9 @@ Grid =[
 ["0","0","0","0","1"],
 ["1","0","0","0","1"]
 ]
-
+row = len(Grid)
+col = len(Grid[0])
 def dfs(r,c,grid):
-    row = len(grid)
-    col = len(grid[0])
-
     if r < 0 or r >= row or c < 0 or c >= col or grid[r][c] == "0":
         return
     grid[r][c] = "0"

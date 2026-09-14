@@ -1,23 +1,5 @@
 #using Stack
-class Stack:
-    def __init__(self):
-        self.st=[]
-
-    def push(self,x):
-        self.st.append(x)
-    def pop(self):
-        if len(self.st)==0:
-            return -1
-        x=self.st[-1]
-        self.st.pop()
-        return x
-    def top(self):
-        if len(self.st)==0:
-            return -1
-        return self.st[-1]
-    def size(self):
-        return len(self.st)
-edges=[(0,1),(0,3),(0,4),(1,2),(1,5),(2,4),(3,4)]
+edges=[(0,1),(0,2),(1,3),(1,4),(2,5),(4,5)]
 n=6   #Nodes
 e=7   #Edges
 adjList=[]
@@ -30,18 +12,16 @@ for edge in edges:
     adjList[y].append(x)
 
 visited=[False]*n
-st=Stack()
+st=[0]
 ans=[]
 
-visited[0]=True
-ans.append(0)
-st.push(0)
-while st.size()>0:
+
+while len(st)>0:
     top=st.pop()
-    if not visited[top]:
-        visited[top]=True
-        ans.append(top)
+    if visited[top]:continue
+    visited[top]=True
+    ans.append(top)
     for i in adjList[top]:
         if not visited[i]:
-            st.push(i)
+            st.append(i)
 print(ans)

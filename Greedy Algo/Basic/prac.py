@@ -1,15 +1,9 @@
-gas  = [1,2,3,4,5]
-cost = [3,4,5,1,2]
-start=0
-tank=0
-total=0
-for i,num in enumerate(cost):
-    gain=gas[i]-cost[i]
-    tank+=gain
-    total+=gain
-    if tank<0:
-        start=i+1
-        tank=0
-    # if total<0:
-    #     start= -1
-print(start)
+intervals = [[1,3], [2,6], [8,10], [15,18]]
+intervals.sort(key=lambda x:x[0])
+ans=[intervals[0]]
+for interval in intervals[1:]:
+    if interval[0]<ans[-1][1]:
+        ans[-1][1]=max(ans[-1][1],interval[1])
+    else:
+        ans.append(interval)
+print(ans)

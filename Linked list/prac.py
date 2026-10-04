@@ -1,33 +1,32 @@
-class node:
-    def __init__(self,val):
-        self.val=val
-        self.next=None
-a=node(1)
-b=node(2)
-c=node(3)
-d=node(4)
-e=node(5)
-f=node(6)
-g=node(7)
-a.next=b
-b.next=c
-c.next=d
-d.next=e
-e.next=f
-f.next=g
-g.next=None
-head=a
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
 
-curr=head
-prev=None
-while curr:
-    nxt=curr.next
-    curr.next=prev
-    prev=curr
-    curr=nxt
-head=prev
+a = Node(1)
+b = Node(2)
+c = Node(3)
+d = Node(4)
+e = Node(5)
+f = Node(6)
+g = Node(7)
 
-curr=head
-while curr!=None:
-    print(curr.val)
-    curr=curr.next
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+e.next = f
+f.next = g
+g.next = c
+
+head = a
+ans="No Cycle"
+slow=head
+fast=head
+while fast and fast.next:
+    fast=fast.next.next
+    slow=slow.next
+    if fast==slow:
+        ans="Cycle Detected"
+        break
+print(ans)

@@ -1,13 +1,10 @@
-heights = [2,1,5,6,2,3]
+temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
+n=len(temperatures)
 stack=[]
-best=0
-
-for i,h in enumerate(heights):
-    start=i
-    while stack and stack[-1][1]>h:
-        indx,hgt=stack.pop()
-        area=hgt*(i-indx)
-        best=max(best,area)
-        start=indx
-    stack.append((i,h))
-print(best)
+ans=[0]*n
+for i,temp in enumerate(temperatures):
+    while stack and stack[-1][1]<temp:
+        indx,Temp=stack.pop()
+        ans[indx]=i-indx
+    stack.append((i,temp))
+print(ans)
